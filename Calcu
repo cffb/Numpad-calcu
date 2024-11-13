@@ -1,0 +1,124 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Numpad251024 implements ActionListener{
+    JFrame frame;
+    JTextField screen;
+    JButton slash;
+    JButton asterisk;
+    JButton minus;
+    JButton seven;
+    JButton eight;
+    JButton nine;
+    JButton plus;
+    JButton four;
+    JButton five;
+    JButton six;
+    JButton one;
+    JButton two;
+    JButton three;
+    JButton zero;
+    JButton c;
+    JButton enter;
+    
+    public Numpad251024(){
+        frame=new JFrame("My Num Lock!");
+        screen=new JTextField("");
+        slash=new JButton("/");
+        asterisk=new JButton("*");
+        minus=new JButton("-");
+        seven=new JButton("7");
+        eight=new JButton("8");
+        nine=new JButton("9");
+        plus=new JButton("+");
+        four=new JButton("4");
+        five=new JButton("5");
+        six=new JButton("6");
+        one=new JButton("1");
+        two=new JButton("2");
+        three=new JButton("3");
+        zero=new JButton("0");
+        c=new JButton("C");
+        enter=new JButton("Enter");
+    }
+        
+    public void setFrame(){
+        frame.setLayout(new GraphPaperLayout (new Dimension(8,10)));
+        frame.add(screen, new Rectangle(0,0,8,2));
+        frame.add(slash, new Rectangle(6,6,2,2));
+        frame.add(asterisk, new Rectangle(6,8,2,2));
+        frame.add(minus, new Rectangle(6,4,2,2));
+        frame.add(plus, new Rectangle(6,2,2,2));
+        frame.add(seven, new Rectangle(0,2,2,2));
+        frame.add(eight, new Rectangle(2,2,2,2));
+        frame.add(nine, new Rectangle(4,2,2,2));
+        frame.add(four, new Rectangle(0,4,2,2));
+        frame.add(five, new Rectangle(2,4,2,2));
+        frame.add(six, new Rectangle(4,4,2,2));
+        frame.add(one, new Rectangle(0,6,2,2));
+        frame.add(two, new Rectangle(2,6,2,2));
+        frame.add(three, new Rectangle(4,6,2,2));
+        frame.add(zero, new Rectangle(0,8,2,2));
+        frame.add(c, new Rectangle(2,8,2,2));
+        frame.add(enter, new Rectangle(4,8,2,2));
+        
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
+        frame.setSize(500,500);
+ 
+        one.addActionListener(this);
+        two.addActionListener(this);
+        three.addActionListener(this);
+        four.addActionListener(this);
+        five.addActionListener(this);
+        six.addActionListener(this);
+        seven.addActionListener(this);
+        eight.addActionListener(this);
+        nine.addActionListener(this);
+        zero.addActionListener(this);
+        
+    }
+    
+    public static void main(String[] args){
+        Numpad251024 x=new Numpad251024();
+        x.setFrame();
+    }
+   
+    public void actionPerformed(ActionEvent e){
+        //program goes here if an activated button is clicked
+       // System.out.print("Hello World");
+       //e.getSource -> name ng variable
+       if (e.getSource()==one){
+           String s=screen.getText();
+           screen.setText(s+"1"); //replaces the text in textfield
+       } else if(e.getSource()==two){
+           String s=screen.getText();
+           screen.setText(s+"2"); 
+       } else if(e.getSource()==three){
+           String s=screen.getText();
+           screen.setText(s+"3"); 
+       } else if(e.getSource()==four){
+           String s=screen.getText();
+           screen.setText(s+"4"); 
+       } else if(e.getSource()==five){
+           String s=screen.getText();
+           screen.setText(s+"5"); 
+       } else if(e.getSource()==six){
+           String s=screen.getText();
+           screen.setText(s+"6"); 
+       }else if(e.getSource()==seven){
+           String s=screen.getText();
+           screen.setText(s+"7"); 
+       }else if(e.getSource()==eight){
+           String s=screen.getText();
+           screen.setText(s+"8"); 
+       }else if(e.getSource()==nine){
+           String s=screen.getText();
+           screen.setText(s+"9"); 
+       }else if(e.getSource()==zero){
+           String s=screen.getText();
+           screen.setText(s+"0");
+       }
+    }
+}
