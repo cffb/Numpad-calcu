@@ -1,8 +1,10 @@
+package erererg;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Numpad251024 implements ActionListener{
+public class loginAdenine implements ActionListener{
     JFrame frame;
     JTextField screen;
     JButton slash;
@@ -22,7 +24,7 @@ public class Numpad251024 implements ActionListener{
     JButton c;
     JButton enter;
     
-    public Numpad251024(){
+    public loginAdenine(){
         frame=new JFrame("My Num Lock!");
         screen=new JTextField("");
         slash=new JButton("/");
@@ -77,11 +79,12 @@ public class Numpad251024 implements ActionListener{
         eight.addActionListener(this);
         nine.addActionListener(this);
         zero.addActionListener(this);
+        c.addActionListener(this);
         
     }
     
     public static void main(String[] args){
-        Numpad251024 x=new Numpad251024();
+        loginAdenine x=new loginAdenine();
         x.setFrame();
     }
    
@@ -119,6 +122,9 @@ public class Numpad251024 implements ActionListener{
        }else if(e.getSource()==zero){
            String s=screen.getText();
            screen.setText(s+"0");
+       }else if(e.getSource()==c){
+           String s=screen.getText();
+           screen.setText("");
        }
     }
 }
